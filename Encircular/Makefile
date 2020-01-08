@@ -6,7 +6,9 @@ encircular:
 	g++ -O0 -Wall -Wconversion -lstdc++ -std=c++17 -o encircular Encircular/Encircular.cpp
 
 test:
-	@echo "Test"
+	@echo "Test encircular"
+	@pwd
+	@ls -al
 	test_encircular.py -e encircular
 	test_encircular.py -e encircular -i tests.txt
 
