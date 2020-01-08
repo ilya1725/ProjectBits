@@ -29,8 +29,12 @@ public:
 	const direction getDirection() const { return m_direction; }
 
 	// Do one step
-	long step(char instruction) {
-
+	long step(const char instruction) {
+		if (instruction != 'L' && instruction != 'R' && instruction != 'G') {
+			cout << "Wrong command: " << instruction << endl;
+			return -1;
+		}
+		
 		if (m_direction == direction::north) {
 			if (instruction == 'L') {
 				m_direction = direction::west;
@@ -40,10 +44,6 @@ public:
 			}
 			else if (instruction == 'G') {
 				m_y++;
-			}
-			else {
-				cout << "Wrong command: " << instruction << endl;
-				return -1;
 			}
 		} else if (m_direction == direction::south) {
 			if (instruction == 'L') {
@@ -55,10 +55,6 @@ public:
 			else if (instruction == 'G') {
 				m_y--;
 			}
-			else {
-				cout << "Wrong command: " << instruction << endl;
-				return -1;
-			}
 		} else if (m_direction == direction::east) {
 			if (instruction == 'L') {
 				m_direction = direction::north;
@@ -69,10 +65,6 @@ public:
 			else if (instruction == 'G') {
 				m_x++;
 			}
-			else {
-				cout << "Wrong command: " << instruction << endl;
-				return -1;
-			}
 		} else if (m_direction == direction::west) {
 			if (instruction == 'L') {
 				m_direction = direction::south;
@@ -82,10 +74,6 @@ public:
 			}
 			else if (instruction == 'G') {
 				m_x--;
-			}
-			else {
-				cout << "Wrong command: " << instruction << endl;
-				return -1;
 			}
 		}
 		return 0;
