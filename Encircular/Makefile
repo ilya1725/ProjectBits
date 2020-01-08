@@ -7,6 +7,7 @@ encircular:
 
 test:
 	@echo "Test encircular"
+	@ls -al
 	python test_encircular.py -e encircular
 	python test_encircular.py -e encircular -i tests.txt
 
