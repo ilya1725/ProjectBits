@@ -30,7 +30,7 @@ jobs:
     #  run: ./configure
     - name: Build Encircular
       working-directory: ./Encircular
-      run: make encircular && make test
+      run: make encircular
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
