@@ -1,6 +1,11 @@
 name: C/C++ CI
 
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      - master         # Push events on master branch
+      - ilya1725-Encircular-cleanup
 
 jobs:
   build:
@@ -8,8 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     #- name: configure
     #  run: ./configure
     - name: make All doodles
-      run: cd ./doodles && make all
+      working-directory: ./doodles
+      run: make all
+    - name: Encircular
+      working-directory: ./Encircular
+      run: make encircular && make test
+      
