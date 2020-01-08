@@ -3,13 +3,13 @@ all:	encircular test
 
 encircular:
 	@echo "Building $@: "
-	g++ -O0 -Wall -Wconversion -lstdc++ -std=c++17 -o Encircular Encircular/Encircular.cpp
+	g++ -O0 -Wall -Wconversion -lstdc++ -std=c++17 -o encircular Encircular/Encircular.cpp
 
 test:
 	@echo "Test"
-	test_encircular.py -e Encircular
-	test_encircular.py -e Encircular -i tests.txt
+	test_encircular.py -e encircular
+	test_encircular.py -e encircular -i tests.txt
 
 clean:
-	rm -f Encircular
+	rm -f encircular
 	rm -f *.o
