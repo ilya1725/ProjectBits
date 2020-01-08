@@ -1,6 +1,8 @@
 // Encircular.cpp : Defines the entry point for the console application.
 //
 
+#include "stdafx.h"
+
 #include <iostream>
 #include <math.h> 
 
@@ -17,12 +19,12 @@ enum class direction {
 // Enum class for a point management
 class point {
 private:
-	direction m_direction;
 	long      m_x;
 	long      m_y;
+	direction m_direction;
 
 public:
-	point(int x = 0, int y = 0, direction d = direction::north): m_x(x), m_y(y), m_direction(d) {};
+	explicit point(int x = 0, int y = 0, direction d = direction::north): m_x(x), m_y(y), m_direction(d) {};
 
 	const long getX() const              { return m_x; }
 	const long getY() const              { return m_y; }
