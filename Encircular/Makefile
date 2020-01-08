@@ -7,10 +7,8 @@ encircular:
 
 test:
 	@echo "Test encircular"
-	@pwd
-	@ls -al
-	test_encircular.py -e encircular
-	test_encircular.py -e encircular -i tests.txt
+	@test_encircular.py -e encircular
+	@test_encircular.py -e encircular -i tests.txt
 
 clean:
 	rm -f encircular
