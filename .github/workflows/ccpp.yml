@@ -8,7 +8,7 @@ on:
       - ilya1725-Encircular-cleanup
 
 jobs:
-  build:
+  build_doodles:
 
     runs-on: ubuntu-latest
     
@@ -19,7 +19,26 @@ jobs:
     - name: make All doodles
       working-directory: ./doodles
       run: make all
-    - name: Encircular
+      
+  build_encircular:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    #- name: configure
+    #  run: ./configure
+    - name: Build Encircular
       working-directory: ./Encircular
       run: make encircular && make test
-      
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test Encircular
+      working-directory: ./Encircular
+      run: make test
