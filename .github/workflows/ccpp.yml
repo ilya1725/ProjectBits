@@ -86,3 +86,20 @@ jobs:
       run: |
         ./test
 
+  build_gtest:
+    name: Build & test different GTest examples
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: cmake configure
+      working-directory: ./
+      run: cmake -S ./ -B build -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+    - name: build template_test
+      working-directory: ./
+      run: cmake --build ./build/ --target template_test
+    - name: run test
+      working-directory: ./EV-routing-challenge
+      run: GTEST_COLOR=1 ctest -V
+
