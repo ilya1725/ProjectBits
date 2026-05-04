@@ -33,6 +33,10 @@ undefined:
 	@echo "Building $@: "
 	g++ -Wall -Wconversion -lstdc++ -pthread -std=c++20 -o undefined src/undefined.cpp
 
+circular:
+	@echo "Building $@: "
+	g++ -Wall -Wconversion -lstdc++ -pthread -std=c++20 -o undefined src/circular-buffer.cpp
+
 clean:
 	rm -f *.o
 	rm -f memgoble
@@ -43,3 +47,4 @@ clean:
 	rm -f obstacle-path
 	rm -f array_size
 	rm -f undefined
+	rm -f circular
