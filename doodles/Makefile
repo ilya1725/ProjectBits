@@ -44,7 +44,7 @@ clean:
 	rm -f ex3
 	rm -f doodles
 	rm -f file-search
-    rm -f i2c_read
+	rm -f i2c_read
 	rm -f obstacle-path
 	rm -f array_size
 	rm -f undefined
