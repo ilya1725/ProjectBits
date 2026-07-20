@@ -1,4 +1,4 @@
-all:	doodles ex2 ex3 memgoble file-search path array
+all:	doodles ex2 ex3 memgoble file-search path array undefined i2c_read
 .PHONY : all
 
 doodles:
